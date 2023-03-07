@@ -1,0 +1,43 @@
+<div class="main">
+    <h2 style="text-align: center;">Sign up to create an account</h2>
+    <form [formGroup]="signUpForm"><!-- (ngSubmit)="signUpData()" -->
+      <mat-form-field class="input">
+        <mat-label>Enter Name</mat-label>
+        <input matInput placeholder="Enter your name" formControlName="userName">
+        <mat-error>Enter your name</mat-error>
+      </mat-form-field><br>
+  
+      <mat-form-field class="input">
+        <mat-label>Enter Email</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="userEmail">
+        <mat-error>Enter your email</mat-error>
+      </mat-form-field><br>
+  
+      <mat-form-field class="input">
+        <mat-label>Enter Mobile</mat-label>
+        <input matInput placeholder="Enter your mobile number" formControlName="userMob" pattern="[7-9]{1}[0-9]{9}">
+        <mat-error>enter your 10 digit mobile number</mat-error>
+      </mat-form-field><br>
+  
+      <label>Select Gender</label><br><br>
+      <input type="radio" value="male" formControlName="gender"> &nbsp; &nbsp;Male <br>
+      <input type="radio" value="female" formControlName="gender">&nbsp; &nbsp;Female <br>
+  
+      <mat-form-field class="input">
+        <mat-label>Enter Password </mat-label>
+        <input matInput placeholder="Enter password" formControlName="userpass" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&]).{8,}$">
+        <mat-error>use 8 or more characters with a mix of letter,numbers & symbols </mat-error>
+      </mat-form-field><br><br>
+  
+      <mat-checkbox formControlName="userCheck"> Accept Tc & Cs</mat-checkbox>
+    
+  
+      <div style="text-align: center;">
+        <button [disabled]="signUpForm.invalid" mat-raised-button color="accent" (click)="signUpData()">Sign up</button><br><br>
+      </div>
+  
+  
+      <div style="text-align: center;">Already have member?<a  routerLink="/user/usersignin">Sign in here</a></div>
+    </form>
+  </div>
+
