@@ -2,9 +2,9 @@
     <nav class="navbar">
         <span style="font-size: xx-large; margin-left: 5px;"><b><i>ROYAL HOTEL</i></b></span>
         <div class="btns">
-        <button type="button" class="btn btn-primary" (click)="Journey('Admin')" >ADMIN</button>
-        <button type="button" class="btn btn-success" (click)="Journey('Owner')" >OWNER</button>
-        <button type="button" class="btn btn-danger" (click)="Journey('User')" >USER</button>
+        <button type="button" class="btn btn-primary" (click)="Journey('Admin')" (click)="adminSelected()" >ADMIN</button>
+        <button type="button" class="btn btn-success" (click)="Journey('Owner')" (click)="ownerSelected()">OWNER</button>
+        <button type="button" class="btn btn-danger" (click)="Journey('User')" (click)="userSelected()">USER</button>
        </div>
     </nav>
 </body>

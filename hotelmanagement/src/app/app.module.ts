@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 console.log('mainModule');
 
@@ -21,6 +22,7 @@ console.log('mainModule');
     BrowserAnimationsModule,
     NgbModule,
     //ReactiveFormsModule,
+    HttpClientModule
     
   ],
   providers: [],

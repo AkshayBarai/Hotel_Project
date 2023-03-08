@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  constructor(private router :Router){
+  constructor(private router :Router , private dataService : DataService){
 
   }
   Journey(journey:any){
@@ -21,5 +22,20 @@ export class HomeComponent {
       this.router.navigateByUrl('/user/userland')
      }
   }
+
+  adminSelected(){
+   let selectModule = "admins";
+   this.dataService.moduleNavigation(selectModule);
+  }
+
+ownerSelected(){
+  let selectModule = "owners";
+  this.dataService.moduleNavigation(selectModule);
+}
+  
+userSelected(){
+  let selectModule = "users";
+   this.dataService.moduleNavigation(selectModule);
+}
 }
 

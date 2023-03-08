@@ -6,7 +6,7 @@ import { UsersignupComponent } from './usersignup/usersignup.component';
 
 const routes: Routes = [
   {path:'userland',component:UserlandingComponent},
-  {path:'usersignin',component:UsersigninComponent},
+  //{path:'usersignin',component:UsersigninComponent},
   {path:'usersignup',component:UsersignupComponent}
 ];
 

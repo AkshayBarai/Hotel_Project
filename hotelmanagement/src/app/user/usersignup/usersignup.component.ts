@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-usersignup',
@@ -8,8 +9,9 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class UsersignupComponent {
   signUpForm!:FormGroup;
-  formdata:any
-  constructor(private formBuilder:FormBuilder){}
+  formdata?:any
+  
+  constructor(private formBuilder:FormBuilder, private dataService :DataService ){}
   
   ngOnInit() {
     this.formValidation();
@@ -18,6 +20,11 @@ export class UsersignupComponent {
    signUpData(){
     this.formdata =this.signUpForm.value
     console.log(this.formdata ,"this.signUpForm");
+    this.dataService.postApi(this.formdata).subscribe(resPara=>{
+      console.log(resPara ,"resPara");
+    
+      
+    })
     
    }
   // signUpData(){

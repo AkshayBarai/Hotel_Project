@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import { HttpClientModule } from '@angular/common/http';
 console.log('userModule');
 
 @NgModule({
@@ -29,6 +29,7 @@ console.log('userModule');
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
+    HttpClientModule
   ]
 })
 export class UserModule { }

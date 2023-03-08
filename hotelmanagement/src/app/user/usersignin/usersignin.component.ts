@@ -6,8 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./usersignin.component.scss']
 })
 export class UsersigninComponent {
-  submit(data:any){
-    console.log(data,'data');
+  
+//   submit(data:any){
+//     console.log(data,'data');
     
- }
+//  }
 }

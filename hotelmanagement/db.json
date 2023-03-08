@@ -1,12 +1,35 @@
 {
-  "post": [
+  "admins": [
     {
-      "userName":"ajja",
-      "userEmail":"sjsj",
-      "userMob":"789456612",
-     "gender":"hdj",
-     "userpass":"kkk",
-    "userCheck":"hdh"
+      "userName": "Akshaja",
+      "userEmail": "ashjkak@123gma",
+      "userMob": "8695745689",
+      "gender": "male",
+      "userpass": "Asfh@123",
+      "userCheck": true,
+      "id": 1
+    }
+  ],
+  "owners": [
+    {
+      "userName": "Aksldk",
+      "userEmail": "Asksk@gma",
+      "userMob": "8695748569",
+      "gender": "male",
+      "userpass": "Ajdks21232@",
+      "userCheck": true,
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "userName": "Akshay",
+      "userEmail": "askja@123hgamil.com",
+      "userMob": "8794569581",
+      "gender": "male",
+      "userpass": "Akshay@123",
+      "userCheck": true,
+      "id": 1
     }
   ]
 }
