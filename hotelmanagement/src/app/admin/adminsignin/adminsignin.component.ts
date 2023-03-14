@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -7,18 +8,39 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./adminsignin.component.scss']
 })
 export class AdminsigninComponent {
+  responseData : any;
+  signINForm: any;
+  signInForm: any;
 
-constructor(private dataService : DataService){}
+constructor(private dataService : DataService, private router : Router){}
 
-url ="http://localhost:3000/post";
-getApiData:any;
-   submit(data:any){
-    // console.log(data,'data');
-    // this.dataService.getApi(this.url).subscribe(respara=>{
-    //      this.getApiData = respara
-    //      console.log(this.getApiData,"this.getApiData");
-         
-    }
+async submit(data:any){
+  console.log(data,'data');
+  this.signInForm = data;
+  //console.log(this.signInForm,'this.signInForm');
+  
+  this.responseData = await this.dataService.getApiCall().toPromise()
+  console.log(this.responseData ,"this.responseData ");
     
-//  }
+  if(this.responseData){
+    let journey = this.responseData.find((ele :any)=>{
+      return this.signInForm.userName == ele.userName && this.signInForm.password == ele.userpass
+    })
+    if(journey){
+      alert('Login Successful')
+      this.router.navigateByUrl('/admin/adminsuccess');
+    }
+    else{
+      alert('user not found')
+      this.router.navigateByUrl('/admin/adminsignin')
+
+    }
+  }
+ 
+  
+
+  
+  
+}
+
 }

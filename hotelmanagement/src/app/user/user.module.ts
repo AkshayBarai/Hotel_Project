@@ -11,13 +11,19 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
-console.log('userModule');
+import { UsersuccessComponent } from './usersuccess/usersuccess.component';
+import { HotelbookingComponent } from './hotelbooking/hotelbooking.component';
+import {MatTableModule} from '@angular/material/table';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
     UserlandingComponent,
     UsersigninComponent,
     UsersignupComponent,
+    UsersuccessComponent,
+    HotelbookingComponent,
   
   ],
   imports: [
@@ -29,7 +35,11 @@ console.log('userModule');
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    Ng2SearchPipeModule,
+    FormsModule
+    
   ]
 })
 export class UserModule { }

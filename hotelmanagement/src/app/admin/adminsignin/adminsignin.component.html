@@ -1,3 +1,4 @@
+<button mat-button color="warn" class="btn1" routerLink="/admin/adminland" >Back</button>
 <div class="main">
     <h2 style="text-align: center;">Login Here</h2>
     <form #userName="ngForm" autocomplete="off">
@@ -9,7 +10,7 @@
 
           <mat-form-field class="input">
             <mat-label>Enter Password</mat-label>
-            <input matInput placeholder="Enter your password" name="password" #password="ngModel" ngModel required>
+            <input matInput type="password" placeholder="Enter your password" name="password" #password="ngModel" ngModel required>
             <mat-hint>Enter your valid password</mat-hint>
           </mat-form-field><br><br>
           

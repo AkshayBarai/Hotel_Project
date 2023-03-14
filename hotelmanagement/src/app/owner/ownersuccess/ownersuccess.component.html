@@ -1,0 +1,33 @@
+<h2 style="margin-left: 20px;"><b>View Hotel List</b></h2>
+<table border="2px black">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Owner Name</th>
+            <th>Hotel Name</th>
+            <th>Menu</th>
+            <th>Room Available</th>
+            <th>Hotel Address</th>
+            <th>Hotel Mobile</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of apidata">
+            <td>{{data.id}}</td>
+            <td>{{data.ownerName}}</td>
+            <td>{{data.hotelName}}</td>
+            <td>{{data.hotelMenu}}</td>
+            <td>{{data.roomAvailable}}</td>
+            <td>{{data.hotelAddress}}</td>
+            <td>{{data.hotelMobile}}</td>
+            <td><mat-icon (click)="deleteData(data.id)">delete</mat-icon></td>
+            <td><mat-icon (click)="editData(data.id)">create</mat-icon></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<div class="btnBack" routerLink="/owner/ownerland">
+    <button class="btn" mat-button color="warn" routerLink="/owner/ownerland"> <b> Back</b></button></div>
+

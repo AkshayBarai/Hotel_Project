@@ -10,13 +10,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminsuccessComponent } from './adminsuccess/adminsuccess.component';
+import {MatIconModule} from '@angular/material/icon';
 console.log('adminModule');
 
 @NgModule({
   declarations: [
     AdminlandingComponent,
     AdminsigninComponent,
-    AdminsignupComponent
+    AdminsignupComponent,
+    AdminsuccessComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +31,9 @@ console.log('adminModule');
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    HttpClientModule,
+    MatIconModule
   ]
 })
 export class AdminModule { }

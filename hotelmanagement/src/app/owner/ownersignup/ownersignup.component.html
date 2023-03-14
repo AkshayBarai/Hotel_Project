@@ -1,3 +1,4 @@
+<button mat-button color="warn" class="btn1" routerLink="/owner/ownerland" >Back</button>
 <div class="main">
     <h2 style="text-align: center;">Sign up to create an account</h2>
     <form [formGroup]="signUpForm"><!-- (ngSubmit)="signUpData()" -->
@@ -25,7 +26,7 @@
   
       <mat-form-field class="input">
         <mat-label>Enter Password </mat-label>
-        <input matInput placeholder="Enter password" formControlName="userpass" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&]).{8,}$">
+        <input matInput type="password" placeholder="Enter password" formControlName="userpass" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&]).{8,}$">
         <mat-error>use 8 or more characters with a mix of letter,numbers & symbols </mat-error>
       </mat-form-field><br><br>
   

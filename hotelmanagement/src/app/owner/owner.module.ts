@@ -11,13 +11,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
-
+import { OwnersuccessComponent } from './ownersuccess/ownersuccess.component';
+import {MatIconModule} from '@angular/material/icon';
+import { OwnerregistrationComponent } from './ownerregistration/ownerregistration.component';
 
 @NgModule({
   declarations: [
     OwnerlandingComponent,
     OwnersigninComponent,
-    OwnersignupComponent
+    OwnersignupComponent,
+    OwnersuccessComponent,
+    OwnerregistrationComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
   
   ]
 })

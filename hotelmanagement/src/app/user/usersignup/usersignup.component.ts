@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -10,8 +11,9 @@ import { DataService } from 'src/app/data.service';
 export class UsersignupComponent {
   signUpForm!:FormGroup;
   formdata?:any
-  
-  constructor(private formBuilder:FormBuilder, private dataService :DataService ){}
+  getApiRes?:any;
+  constructor(private formBuilder:FormBuilder, private dataService :DataService ,
+    private router : Router){}
   
   ngOnInit() {
     this.formValidation();
@@ -21,10 +23,16 @@ export class UsersignupComponent {
     this.formdata =this.signUpForm.value
     console.log(this.formdata ,"this.signUpForm");
     this.dataService.postApi(this.formdata).subscribe(resPara=>{
+      this.getApiRes = resPara
       console.log(resPara ,"resPara");
     
-      
+      if(this.getApiRes){
+        if(this.dataService.journeyName == "users"){
+          this.router.navigateByUrl('/user/usersuccess')
+        }
+      }
     })
+
     
    }
   // signUpData(){

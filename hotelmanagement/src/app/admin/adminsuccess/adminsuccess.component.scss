@@ -1,0 +1,30 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th{
+    border-top: 2px solid black !important ;
+    border-bottom: 2px solid black  !important
+   
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    background-color: seashell;
+  }
+
+  .btnBack{
+    text-align: center;
+  }
+  
+  .btnBack:hover{
+   
+    width: 100%;
+    background-color: peachpuff;
+    height: 34px;
+}
+
+  
+  

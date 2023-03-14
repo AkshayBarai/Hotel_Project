@@ -1,6 +1,9 @@
 <div class="main">
     <button  class="btn" mat-button color="primary" routerLink="/home" >Back</button>
-    <button class="btn" mat-raised-button color="accent" routerLink="/owner/ownersignin">Sign in</button>
+    <button class="btn" mat-raised-button color="primary" routerLink="/owner/ownersignin">Sign in</button>
     <button class="btn" mat-raised-button  color="warn" routerLink="/owner/ownersignup">Sign up</button>
+    <button mat-raised-button class="btn" color="primary" (click)="newRegistration()">Registration</button>
+    <button mat-raised-button class="btn" color="accent" (click)=" hotelDetails()">Hotel List</button>
+
 </div>
 

@@ -6,17 +6,27 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
  
+ 
  selectModule!:string;
   url!:string
+  journeyName!:string;
+ urlHotelDetails= 'http://localhost:3000/hotelDetails';
+ urlHotelBooking= 'http://localhost:3000/hotelBooking';
+ dataId:any;
+ getApiData:any;
+  newRegistration: boolean =false;
+ 
 
   constructor( private httpClient : HttpClient) { }
 
   moduleNavigation(module: any) {
+ this.journeyName = module;
     this.selectModule = module;
     console.log(this.selectModule,"this.selectModule");
     this.url =`http://localhost:3000/${module}`;
     // this.url ="http://localhost:3000/" + module;
     console.log(this.url ,"this.url");
+  
     
     
 
@@ -29,5 +39,28 @@ export class DataService {
  return this.httpClient.get(this.url)
 }
 
-  
+postApicall(data:any){
+  return this.httpClient.post(this.urlHotelDetails,data)
+  }
+
+  // putApiCall(id:any,body:any){
+  //   return this.httpClient.put(this.urlHotelDetails + "/"+id,body)
+  // }
+//getApi for hotel details  
+getHDcall(){
+  return this.httpClient.get(this.urlHotelDetails)
+}
+
+deleteApi(id:any){
+  return this.httpClient.delete(this.urlHotelDetails + "/" +id)
+}
+
+//Post For Hotelbooking
+postApiHotelBook(data:any) {
+  return this.httpClient.post(this.urlHotelBooking,data)
+}
+
+getApiCallById(id:any){
+  return this.httpClient.get(this.urlHotelDetails + "/" +id)
+}
 }

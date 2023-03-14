@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup ,Validators,FormControl} from '@angular/forms';
+import { Router } from '@angular/router';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -9,8 +10,10 @@ import { DataService } from 'src/app/data.service';
 })
 export class OwnersignupComponent {
   signUpForm!:FormGroup;
-  formdata:any
-  constructor(private formBuilder:FormBuilder ,private dataService: DataService){}
+  formdata?:any
+  getApiRes?:any;
+  constructor(private formBuilder:FormBuilder, private dataService :DataService ,
+    private router : Router){}
   
   ngOnInit() {
     this.formValidation();
@@ -20,10 +23,16 @@ export class OwnersignupComponent {
     this.formdata =this.signUpForm.value
     console.log(this.formdata ,"this.signUpForm");
     this.dataService.postApi(this.formdata).subscribe(resPara=>{
+      this.getApiRes = resPara
       console.log(resPara ,"resPara");
     
-      
+      if(this.getApiRes){
+        if(this.dataService.journeyName == "owners"){
+          this.router.navigateByUrl('/owner/ownersuccess')
+        }
+      }
     })
+
     
    }
   // signUpData(){
@@ -41,6 +50,7 @@ export class OwnersignupComponent {
       userCheck:['',[Validators.requiredTrue]]
     })
   }
+
 
 
 
