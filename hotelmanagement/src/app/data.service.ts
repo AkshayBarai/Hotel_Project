@@ -5,43 +5,43 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
- 
- 
- selectModule!:string;
+  selectModule!:string;
   url!:string
   journeyName!:string;
- urlHotelDetails= 'http://localhost:3000/hotelDetails';
- urlHotelBooking= 'http://localhost:3000/hotelBooking';
- dataId:any;
- getApiData:any;
+  urlHotelDetails= 'http://localhost:3000/hotelDetails';
+  urlHotelBooking= 'http://localhost:3000/hotelBooking';
+  dataId:any;
+  getApiData:any;
   newRegistration: boolean =false;
+  hotelListByOwnerName: any;
+  storeData: any;
  
 
   constructor( private httpClient : HttpClient) { }
 
-  moduleNavigation(module: any) {
- this.journeyName = module;
+moduleNavigation(module: any) {
+    this.journeyName = module;
     this.selectModule = module;
     console.log(this.selectModule,"this.selectModule");
     this.url =`http://localhost:3000/${module}`;
     // this.url ="http://localhost:3000/" + module;
     console.log(this.url ,"this.url");
-  
-    
-    
-
   }
-  postApi(user: any) {
+ 
+ //SignUp Data post Api of owner user admin 
+postApi(user: any) {
    return this.httpClient.post(this.url,user)
   }
 
-  getApiCall () {
- return this.httpClient.get(this.url)
+  //SignIn Data get Api of owner user admin 
+getApiCall () {
+  return this.httpClient.get(this.url)
 }
 
+//ownerregistratin post Api
 postApicall(data:any){
   return this.httpClient.post(this.urlHotelDetails,data)
-  }
+}
 
   // putApiCall(id:any,body:any){
   //   return this.httpClient.put(this.urlHotelDetails + "/"+id,body)

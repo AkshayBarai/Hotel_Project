@@ -14,6 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { OwnersuccessComponent } from './ownersuccess/ownersuccess.component';
 import {MatIconModule} from '@angular/material/icon';
 import { OwnerregistrationComponent } from './ownerregistration/ownerregistration.component';
+import { SharedModule } from '../shared/shared.module';
+import { MatRadioModule } from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { OwnerregistrationComponent } from './ownerregistration/ownerregistratio
     MatInputModule,
     MatCheckboxModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    SharedModule,
+    MatRadioModule,
+    MatSelectModule
   
   ]
 })

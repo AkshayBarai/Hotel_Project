@@ -8,13 +8,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchPipe } from './search.pipe';
+import { NameValidationDirective } from './name-validation.directive';
+import { MobValidationDirective } from './mob-validation.directive';
 
 console.log('mainModule');
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    //MobValidationDirective,
+    //NameValidationDirective,
+    //SearchPipe
   ],
   imports: [
     BrowserModule,

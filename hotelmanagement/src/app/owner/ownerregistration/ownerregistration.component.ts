@@ -14,10 +14,13 @@ export class OwnerregistrationComponent {
   formData:any;
   dataId:any;
   editData:any;
+  newRegistration:any;
+  
   constructor(private formBuilder :FormBuilder,private dataService : DataService,
-    private router:Router){
+    private router:Router){}
 
-  }
+  options: string[] = ['Paneer Tikka Masala', 'Paneer Butter Masala', 'Dosa', 'Mini Thali', 'Special Thali ', 'Mutton Biryani','Chicken Biryani','Gulab Jamun','Egg Varieties','Non-Veg Varieties'];
+ 
   ngOnInit(){
     
     //this.dataId = this.dataService.dataId;
@@ -33,7 +36,7 @@ export class OwnerregistrationComponent {
     
   }
   
-postHoteldata(){
+async postHoteldata(){
   console.log(this.regitrationForm.value ,'regitrationForm');
   this.formData = this.regitrationForm.value;
 
@@ -44,12 +47,12 @@ postHoteldata(){
   //  })
  // }
   ///else{
-    this.dataService.postApicall(this.formData).subscribe(result=>{
-      console.log(result , "result");
+    this.dataService.storeData = await this.dataService.postApicall(this.formData).toPromise()
+      //console.log(result , "result");
       
-    })
+    //})
     alert('data update succefully')
-    this.router.navigateByUrl('/owner/ownerland')
+    this.router.navigateByUrl('/owner/ownersuccess')
 
   }   
  formValidation(){
@@ -58,7 +61,7 @@ postHoteldata(){
     hotelName:[this.editData ? this.editData.hotelName :'',[Validators.required]],
     hotelAddress:[this.editData ? this.editData.hotelAddress :'',[Validators.required]],
     hotelMobile:[this.editData ? this.editData.hotelMobile :'',[Validators.pattern,Validators.maxLength(10),Validators.minLength(10)]],
-    hotelMenu:[this.editData ? this.editData.hotelMenu :'',[Validators.required]],
+    hotelMenu:[this.editData ? '' :'',[Validators.required]],
     roomAvailable:[this.editData ? this.editData.roomAvailable :'',[Validators.required]],
     userPass:[this.editData ? this.editData.userPass :'',[Validators.pattern,Validators.required]],
     owenrCheck:[this.editData ? this.editData.owenrCheck:'',[Validators.requiredTrue]],

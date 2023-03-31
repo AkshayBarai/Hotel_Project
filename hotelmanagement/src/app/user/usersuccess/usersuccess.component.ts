@@ -9,7 +9,7 @@ import { DataService } from 'src/app/data.service';
 export class UsersuccessComponent {
  apidata:any;
  searchText:any;
- flag=false;
+ 
  constructor(private dataService : DataService){}
 
  ngOnInit(){
@@ -24,7 +24,6 @@ export class UsersuccessComponent {
      
    })
 
-   this.flag = true;
- }
+  }
  
 }

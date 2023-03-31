@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./adminlanding.component.scss']
 })
 export class AdminlandingComponent {
-   
+ 
 }

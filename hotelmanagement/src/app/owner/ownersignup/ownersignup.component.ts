@@ -47,11 +47,26 @@ export class OwnersignupComponent {
       userMob:['',[Validators.pattern,Validators.maxLength(10),Validators.minLength(10)]],
       gender:['',[Validators.required]],
       userpass:['',[Validators.pattern,Validators.required]],
-      userCheck:['',[Validators.requiredTrue]]
-    })
+      userCheck:['',[Validators.requiredTrue]],
+      userConfirmpass:['',[Validators.required]]
+    },
+    {validator: this.checkIfMatchingPasswords('userpass', 'userConfirmpass')})
   }
 
 
 
-
+  
+  checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
+    return (group: FormGroup) => {
+      let passwordInput = group.controls[passwordKey],
+          passwordConfirmationInput = group.controls[passwordConfirmationKey];
+      if (passwordInput.value !== passwordConfirmationInput.value) {
+        return passwordConfirmationInput.setErrors({notEquivalent: true})
+      }
+      else {
+          return passwordConfirmationInput.setErrors(null);
+      }
+    }
+  }
 }
+

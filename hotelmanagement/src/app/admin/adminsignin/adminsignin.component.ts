@@ -11,6 +11,8 @@ export class AdminsigninComponent {
   responseData : any;
   signINForm: any;
   signInForm: any;
+  // hideNotification: boolean = true;
+  // showNotification: boolean = true ;
 
 constructor(private dataService : DataService, private router : Router){}
 
@@ -28,19 +30,17 @@ async submit(data:any){
     })
     if(journey){
       alert('Login Successful')
-      this.router.navigateByUrl('/admin/adminsuccess');
+       this.router.navigateByUrl('/admin/adminsuccess');
     }
     else{
       alert('user not found')
       this.router.navigateByUrl('/admin/adminsignin')
 
     }
-  }
- 
-  
-
-  
-  
-}
+ }
+ }
+//  hideToats(){
+//   this.hideNotification = false;
+// }
 
 }

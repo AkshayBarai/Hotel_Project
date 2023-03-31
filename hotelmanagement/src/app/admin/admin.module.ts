@@ -13,6 +13,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminsuccessComponent } from './adminsuccess/adminsuccess.component';
 import {MatIconModule} from '@angular/material/icon';
+import { SharedModule } from '../shared/shared.module';
 console.log('adminModule');
 
 @NgModule({
@@ -33,7 +34,8 @@ console.log('adminModule');
     MatCheckboxModule,
     MatRadioModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    SharedModule
   ]
 })
 export class AdminModule { }

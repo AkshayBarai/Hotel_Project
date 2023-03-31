@@ -10,16 +10,5 @@ import { DataService } from 'src/app/data.service';
 export class OwnerlandingComponent {
 
 
-  constructor(private router : Router,private dataService :DataService){}
-
-
-
-  newRegistration(){
-    this.dataService.newRegistration = true
-    this.router.navigateByUrl('/owner/ownerregistration')
-  }
-  hotelDetails(){
-    this.dataService.newRegistration = false;
-  this.router.navigateByUrl('/owner/ownersuccess')
-  }
+  
 }

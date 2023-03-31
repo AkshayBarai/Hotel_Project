@@ -15,6 +15,8 @@ import { UsersuccessComponent } from './usersuccess/usersuccess.component';
 import { HotelbookingComponent } from './hotelbooking/hotelbooking.component';
 import {MatTableModule} from '@angular/material/table';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SharedModule } from '../shared/shared.module';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     HttpClientModule,
     MatTableModule,
     Ng2SearchPipeModule,
-    FormsModule
+    FormsModule,
+    SharedModule,
+    MatRadioModule,
     
   ]
 })

@@ -1,3 +1,14 @@
+body{
+  background-image: url("~src/assets/img/hotelTable.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center ;
+}
+
+.btn1{
+  margin: 10px;
+}
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -7,7 +18,7 @@ table {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
-    background-color: peachpuff;
+    background-color: lavenderblush;
   }
 
   th{

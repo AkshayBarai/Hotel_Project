@@ -1,4 +1,13 @@
-<h2 style="margin-left: 20px;"><b>View Hotel List</b></h2>
+<body>
+<button class="btn" mat-button color="warn" routerLink="/owner/ownerland"> <b> Back</b></button>
+
+<button mat-raised-button class="btn" class="btn1" color="primary" (click)="newRegistration()">Registration</button>
+    
+<button mat-raised-button class="btn" class="btn1" color="accent" (click)="hotelDetails()">Hotel List</button>
+
+<div *ngIf="hideTable">
+
+<h2 style="text-align: center; color: white;"><b>View Hotel List</b></h2>
 <table border="2px black">
     <thead>
         <tr>
@@ -14,7 +23,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let data of apidata">
+        <tr *ngFor="let data of hotelListByName">
             <td>{{data.id}}</td>
             <td>{{data.ownerName}}</td>
             <td>{{data.hotelName}}</td>
@@ -31,3 +40,6 @@
 <div class="btnBack" routerLink="/owner/ownerland">
     <button class="btn" mat-button color="warn" routerLink="/owner/ownerland"> <b> Back</b></button></div>
 
+</div>
+
+</body>

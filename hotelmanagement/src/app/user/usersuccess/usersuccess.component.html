@@ -2,7 +2,7 @@
 <div class="searchBar">
 <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="&#61442;  Start searching from id or hotelHome or hotelAddress">
 </div>
-<div *ngIf="flag">
+<div>
 <table border="2px black" >
     <thead>
         <tr>
@@ -16,7 +16,7 @@
             <th>Book</th>
         </tr>
         <tbody>
-             <tr *ngFor="let data of apidata | filter:searchText">
+             <tr *ngFor="let data of apidata | search:searchText">
                 <td>{{data.id}}</td>
                 <td>{{data.ownerName}}</td>
                 <td>{{data.hotelName}}</td>
@@ -30,7 +30,7 @@
     </table>
     <br>
 </div>
-<div class="btnBack" routerLink="/owner/ownerland">
+<div class="btnBack" routerLink="/user/userland">
     <button mat-button color="warn" routerLink="/user/userland">Back</button>
     
 </div>
